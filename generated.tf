@@ -23,7 +23,7 @@ resource "aws_instance" "example" {
   placement_partition_number           = 0
   private_ip                           = "172.31.3.242"
   secondary_private_ips                = []
-  security_groups                      = ["terraform-import"]
+  security_groups                      = ["sg-0486c280f33260e16"]
   source_dest_check                    = true
   subnet_id                            = "subnet-0622aa60"
   tags = {
@@ -41,11 +41,7 @@ resource "aws_instance" "example" {
   capacity_reservation_specification {
     capacity_reservation_preference = "open"
   }
-  cpu_options {
-    amd_sev_snp      = null
-    core_count       = 1
-    threads_per_core = 1
-  }
+
   credit_specification {
     cpu_credits = "standard"
   }
